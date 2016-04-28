@@ -9,7 +9,7 @@ class HotelReservation
     @customer_name = reservation_info[:customer_name]
     @date = reservation_info[:date]
     @room_number = reservation_info[:room_number]
-    @amenitites = []
+    @amenities = []
   end
 
   def add_a_fridge
