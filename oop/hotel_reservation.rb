@@ -32,3 +32,53 @@ end
 # The add_a_crib method
 # The add_a_custom_amenity method
 
+reservation = HotelReservation.new({customer_name: "John Messina", date: "05-15-2017", room_number: "805"})
+
+# Test ability to change a room number even after a reservation has already been created
+reservation.room_number = "519"
+result = reservation.room_number
+puts "Your method returned:"
+puts result
+if result == "519"
+  puts "PASS!"
+else 
+  puts "F"
+end
+
+# Test the add_a_fridge method
+reservation.add_a_fridge
+result = reservation.amenities
+puts "Your method returned:"
+puts result
+if result == ["fridge"]
+  puts "PASS!"
+else
+  puts "F"
+end
+
+# Test the add_a_crib method
+reservation.add_a_crib
+result = reservation.amenities
+puts "Your method returned:"
+puts result
+if result == ["fridge", "crib"]
+  puts "PASS!"
+else
+  puts "F"
+end
+
+# Test the add_a_custom_amenity method
+reservation.add_a_custom_amenity("iron")
+result = reservation.amenities
+puts "Your method returned:"
+puts result
+if result == ["fridge", "crib", "iron"]
+  puts "PASS!"
+else
+  puts "F"
+end
+
+
+
+
+
